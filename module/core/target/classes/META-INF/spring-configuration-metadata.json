@@ -1,0 +1,30 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.koko.core.util.UploadUtil",
+      "name": "",
+      "type": "com.koko.core.util.UploadUtil"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.koko.core.util.UploadUtil",
+      "name": "image-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.koko.core.util.UploadUtil",
+      "defaultValue": false,
+      "name": "is-day-type",
+      "description": "按照当日创建文件夹",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.koko.core.util.UploadUtil",
+      "name": "upload-path",
+      "description": "自定义文件路径",
+      "type": "java.lang.String"
+    }
+  ]
+}
