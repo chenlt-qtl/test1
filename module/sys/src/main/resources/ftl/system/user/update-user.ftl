@@ -46,7 +46,7 @@ To change this template use File | Settings | File Templates.-->
       <div class="layui-input-inline">
 
           <div  id="demo2" style="margin-top: 20px;margin-left: 50px">
-            <img src="${re.contextPath}/file/image/${user.photo}" width="100px" height="100px" class="layui-upload-img layui-circle">
+            <img src="${re.contextPath}/${imagePath}/<#if !user.photo>default.jpg<#else>${user.photo}</#if>" width="100px" height="100px" class="layui-upload-img layui-circle">
           </div>
 
       </div>

@@ -2,6 +2,7 @@ package com.koko.web.config;
 
 import freemarker.template.TemplateException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.ui.freemarker.FreeMarkerConfigurationFactory;
@@ -19,9 +20,10 @@ import java.util.Properties;
 @Configuration
 public class FreeMarkerConfig{
 
+    @Value("${koko.imagePath}")
+    private String imagePath;
 
-
-  @Bean
+    @Bean
   public ViewResolver viewResolverFtl() {
     FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
     resolver.setCache(false);
@@ -32,6 +34,9 @@ public class FreeMarkerConfig{
     resolver.setSuffix(".ftl");
     resolver.setContentType("text/html;charset=UTF-8");
     resolver.setOrder(0);
+    Properties settings = new Properties();
+    settings.put("imagePath",imagePath);
+    resolver.setAttributes(settings);
     return resolver;
   }
 

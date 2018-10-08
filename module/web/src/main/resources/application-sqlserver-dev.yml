@@ -2,7 +2,7 @@ server:
   port: 8081
 spring:
   datasource:
-        url: jdbc:sqlserver://localhost:1433;DatabaseName=lenos
+        url: jdbc:sqlserver://localhost:1433;DatabaseName=koko
         username: sa
         password: 123
         # 使用druid数据源

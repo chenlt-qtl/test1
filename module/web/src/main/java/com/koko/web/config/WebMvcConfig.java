@@ -25,9 +25,9 @@ import java.util.Locale;
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurationSupport {
 
-    @Value("${lenosp.imagePath}")
+    @Value("${koko.imagePath}")
     private String imagePath;
-    @Value("${lenosp.uploadPath}")
+    @Value("${koko.uploadPath}")
     private String filePath;
 
     @Bean
@@ -47,8 +47,8 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**").addResourceLocations("classpath:/META-INF/resources/").setCachePeriod(0);
-        registry.addResourceHandler("/plugin/**", "/static/**")
-                .addResourceLocations("classpath:/plugin/", "classpath:/static/");
+        registry.addResourceHandler("/plugin/**", "/static/**","/js/**")
+                .addResourceLocations("classpath:/plugin/", "classpath:/static/","classpath:/js/");
         registry.addResourceHandler("/ftl/**").addResourceLocations("classpath:/ftl/");
         registry.addResourceHandler("/images/**").addResourceLocations("file:" + imagePath);
         registry.addResourceHandler("/file/**").addResourceLocations("file:" + imagePath);

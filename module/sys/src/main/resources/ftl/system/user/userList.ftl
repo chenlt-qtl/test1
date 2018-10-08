@@ -13,11 +13,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport"
         content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
-  <link rel="stylesheet" href="${re.contextPath}/plugin/layui/css/layui.css">
-  <link rel="stylesheet" href="${re.contextPath}/plugin/lenos/main.css">
-  <script type="text/javascript" src="${re.contextPath}/plugin/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="${re.contextPath}/plugin/layui/layui.all.js"
-          charset="utf-8"></script>
+  <#include "include/header.html">
     <script type="text/javascript" src="${re.contextPath}/plugin/tools/tool.js"></script>
 
 </head>
@@ -138,7 +134,7 @@
         });
       },
       add: function () {
-        add('添加用户', 'showAddUser', 700, 450);
+          open('add-user','添加用户', 'showAddUser');
       },
       update: function () {
         var checkStatus = table.checkStatus('userList')
@@ -202,122 +198,16 @@
 
   });
   function rePwd(title,url,w,h){
-    if (title == null || title == '') {
-      title = false;
-    };
-    if (url == null || url == '') {
-      url = "404.html";
-    };
-    if (w == null || w == '') {
-      w = ($(window).width() * 0.9);
-    };
-    if (h == null || h == '') {
-      h = ($(window).height() - 50);
-    };
-    layer.open({
-      id: 'user-rePwd',
-      type: 2,
-      area: [w + 'px', h + 'px'],
-      fix: false,
-      maxmin: true,
-      shadeClose: true,
-      shade: 0.4,
-      title: title,
-      content: url,
-    });
+      open('user-rePwd',title,url);
   }
   function detail(title, url, w, h) {
-    if (title == null || title == '') {
-      title = false;
-    };
-    if (url == null || url == '') {
-      url = "error/404";
-    };
-    if (w == null || w == '') {
-      w = ($(window).width() * 0.9);
-    };
-    if (h == null || h == '') {
-      h = ($(window).height() - 50);
-    };
-    layer.open({
-      id: 'user-detail',
-      type: 2,
-      area: [w + 'px', h + 'px'],
-      fix: false,
-      maxmin: true,
-      shadeClose: true,
-      shade: 0.4,
-      title: title,
-      content: url + '&detail=true',
-      // btn:['关闭']
-    });
+      open('user-detail',title,url + '&detail=true');
   }
   /**
    * 更新用户
    */
   function update(title, url, w, h) {
-    if (title == null || title == '') {
-      title = false;
-    }
-    if (url == null || url == '') {
-      url = "404.html";
-    }
-    if (w == null || w == '') {
-      w = ($(window).width() * 0.9);
-    }
-    if (h == null || h == '') {
-      h = ($(window).height() - 50);
-    }
-    layer.open({
-      id: 'user-update',
-      type: 2,
-      area: [w + 'px', h + 'px'],
-      fix: false,
-      maxmin: true,
-      shadeClose: false,
-      shade: 0.4,
-      title: title,
-      content: url + '&detail=false'
-    });
-  }
-
-  /*弹出层*/
-  /*
-   参数解释：
-   title   标题
-   url     请求的url
-   id      需要操作的数据id
-   w       弹出层宽度（缺省调默认值）
-   h       弹出层高度（缺省调默认值）
-   */
-  function add(title, url, w, h) {
-    if (title == null || title == '') {
-      title = false;
-    }
-    ;
-    if (url == null || url == '') {
-      url = "404.html";
-    }
-    ;
-    if (w == null || w == '') {
-      w = ($(window).width() * 0.9);
-    }
-    ;
-    if (h == null || h == '') {
-      h = ($(window).height() - 50);
-    }
-    ;
-    layer.open({
-      id: 'user-add',
-      type: 2,
-      area: [w + 'px', h + 'px'],
-      fix: false,
-      maxmin: true,
-      shadeClose: false,
-      shade: 0.4,
-      title: title,
-      content: url
-    });
+      open('user-update',title,url + '&detail=false');
   }
 </script>
 </body>
