@@ -28,7 +28,7 @@ To change this template use File | Settings | File Templates.-->
       <legend style="font-size:16px;">头像上传</legend>
     </fieldset>
       <div class="layui-input-inline">
-    <div class="layui-upload-drag" style="margin-left:10%;" id="test10">
+    <div class="layui-upload-drag" style="margin-left:10%;height:125px;" id="test10">
       <i style="font-size:30px;" class="layui-icon"></i>
      <p style="font-size: 10px">点击上传，或将文件拖拽到此处</p>
     </div>

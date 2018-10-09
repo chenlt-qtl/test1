@@ -23,9 +23,8 @@
     <div class="layui-logo kit-logo-mobile"></div>
     <div class="layui-hide-xs">
     <ul class="layui-nav layui-layout-left kit-nav">
-      <li class="layui-nav-item"><a href="javascript:s();">会员管理</a></li>
+      <li class="layui-nav-item"><a href="./note/showNote">我的笔记</a></li>
         <li class="layui-nav-item"><a href="javascript:;" kit-target data-options="{url:'/article/articleList',icon:'&#xe658;',title:'文章管理',id:'966'}">文章管理</a></li>
-      <#--<li class="layui-nav-item"><a href="javascript:;" id="pay"><i class="fa fa-gratipay" aria-hidden="true"></i> 捐赠我</a></li>-->
       <li class="layui-nav-item">
         <a href="javascript:;">其它系统</a>
         <dl class="layui-nav-child">
@@ -53,7 +52,7 @@
       <li class="layui-nav-item">
         <a href="javascript:;">
         <#assign currentUser = Session["curentUser"]>
-          <img src="${re.contextPath}/${koko.imagePath}/${currentUser.photo}" class="layui-nav-img">${currentUser.username}
+          <img src="${re.contextPath}/${imagePath}/<#if !currentUser.photo>default.jpg<#else>${currentUser.photo}</#if>" class="layui-nav-img">${currentUser.username}
         </a>
         <dl class="layui-nav-child">
           <dd><a href="javascript:;" kit-target data-options="{url:'basic.html',icon:'&#xe658;',title:'基本资料',id:'966'}"><span>基本资料</span></a></dd>

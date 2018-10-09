@@ -7,10 +7,7 @@
   <title></title>
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <link href="" rel="stylesheet">
-  <link rel="stylesheet" href="${re.contextPath}/plugin/layuitree/layui/css/layui.css">
-  <link rel="stylesheet" href="${re.contextPath}/plugin/lenos/main.css"/>
-    <script type="text/javascript" src="${re.contextPath}/plugin/jquery/jquery-3.2.1.min.js"></script>
+  <#include "include/header.html">
 </head>
 <body>
 <div  class="layui-col-md13">
@@ -40,7 +37,7 @@
   }
   function update(nodeId){
       console.log(nodeId);
-    add('编辑菜单', 'showUpdateMenu?id='+nodeId, 700, 550);
+    open('user-add', '编辑菜单', 'showUpdateMenu?id='+nodeId);
   }
 
   var layout = [
@@ -103,35 +100,6 @@
         active[type] ? active[type].call(this) : '';
     });
   });
-  function add(title, url, w, h) {
-      if (title == null || title == '') {
-          title = false;
-      }
-      ;
-      if (url == null || url == '') {
-          url = "/error/404";
-      }
-      ;
-      if (w == null || w == '') {
-          w = ($(window).width() * 0.9);
-      }
-      ;
-      if (h == null || h == '') {
-          h = ($(window).height() - 50);
-      }
-      ;
-      layer.open({
-          id: 'user-add',
-          type: 2,
-          area: [w + 'px', h + 'px'],
-          fix: false,
-          maxmin: true,
-          shadeClose: false,
-          shade: 0.4,
-          title: title,
-          content: url
-      });
-  }
   function delMenu(id) {
       $.ajax({
           url: "menu-del",
