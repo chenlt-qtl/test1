@@ -34,6 +34,10 @@
       <groupId>com.koko</groupId>
       <artifactId>sys</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.koko</groupId>
+      <artifactId>note</artifactId>
+    </dependency>
 
   </dependencies>
   <build>
