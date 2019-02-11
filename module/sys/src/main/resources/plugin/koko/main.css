@@ -1,6 +1,6 @@
 .layui-input {
   height: 30px;
-  width: 120px;
+  width: 190px;
 }
 
 
@@ -44,4 +44,33 @@
   font-size: 21px!important;
 }
 
+.koko-long-line{
+  margin: 2px 0;
+  width: 100%;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e6e6e6;
+}
 
+.layui-tab-title li {
+  min-width: 10px;
+}
+
+.koko-outer{
+  margin: 5px;
+}
+
+.koko-btn{
+  height: 30px;
+  line-height: 29px;
+  vertical-align: top;
+  padding: 0 4px;
+}
+
+.koko-search-btn{
+  margin-left: -5px;
+}
+
+.layui-icon{
+  margin-left: 3px;
+}

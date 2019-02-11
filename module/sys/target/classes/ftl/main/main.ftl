@@ -24,7 +24,8 @@
     <div class="layui-hide-xs">
     <ul class="layui-nav layui-layout-left kit-nav">
       <li class="layui-nav-item"><a href="./note/showNote">我的笔记</a></li>
-        <li class="layui-nav-item"><a href="javascript:;" kit-target data-options="{url:'/article/articleList',icon:'&#xe658;',title:'文章管理',id:'966'}">文章管理</a></li>
+      <li class="layui-nav-item"><a href="./note/showNoteNew">我的笔记(new)</a></li>
+      <li class="layui-nav-item"><a href="javascript:;" kit-target data-options="{url:'/article/articleList',icon:'&#xe658;',title:'文章管理',id:'966'}">文章管理</a></li>
       <li class="layui-nav-item">
         <a href="javascript:;">其它系统</a>
         <dl class="layui-nav-child">

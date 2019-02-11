@@ -21,6 +21,10 @@
         <artifactId>core</artifactId>
       </dependency>
     <dependency>
+      <groupId>com.koko</groupId>
+      <artifactId>sys</artifactId>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>

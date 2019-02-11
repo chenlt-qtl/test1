@@ -1,5 +1,6 @@
 package com.koko.note.entity;
 
+import com.koko.core.base.DataEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -11,44 +12,17 @@ import javax.persistence.*;
 @Data
 @ToString
 @EqualsAndHashCode
-public class NoteInfo {
-    @Id
-    @GeneratedValue(generator = "JDBC")
-    private String id;
+public class NoteInfo extends DataEntity {
 
     private String pid;
+
+    private String pids;
 
     private String title;
 
     private String tab;
 
-    @Column(name = "create_by")
-    private String createBy;
-
-    @Column(name = "create_date")
-    private Date createDate;
-
-    @Column(name = "update_by")
-    private String updateBy;
-
-    @Column(name = "update_date")
-    private Date updateDate;
-
     private byte[] content;
-
-    /**
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
-    }
 
     /**
      * @return pid
@@ -93,62 +67,6 @@ public class NoteInfo {
     }
 
     /**
-     * @return create_by
-     */
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    /**
-     * @param createBy
-     */
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy == null ? null : createBy.trim();
-    }
-
-    /**
-     * @return create_date
-     */
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    /**
-     * @param createDate
-     */
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    /**
-     * @return update_by
-     */
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    /**
-     * @param updateBy
-     */
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy == null ? null : updateBy.trim();
-    }
-
-    /**
-     * @return update_date
-     */
-    public Date getUpdateDate() {
-        return updateDate;
-    }
-
-    /**
-     * @param updateDate
-     */
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
-    }
-
-    /**
      * @return content
      */
     public byte[] getContent() {
@@ -160,5 +78,13 @@ public class NoteInfo {
      */
     public void setContent(byte[] content) {
         this.content = content;
+    }
+
+    public String getPids() {
+        return pids;
+    }
+
+    public void setPids(String pids) {
+        this.pids = pids;
     }
 }

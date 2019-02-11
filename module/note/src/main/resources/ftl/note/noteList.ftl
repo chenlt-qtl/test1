@@ -9,340 +9,78 @@
         content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
   <#include "include/header.html">
 </head>
+<style>
+    .layui-input{
+        display: inline;
+    }
+</style>
 
 <body>
-<div class="lenos-search">
-  <div class="select">
-    任务名称：
-    <div class="layui-inline">
-      <input class="layui-input" height="20px" id="jobName" autocomplete="off">
-    </div>
-    描述：
-    <div class="layui-inline">
-      <input class="layui-input" height="20px" id="remark" autocomplete="off">
-    </div>
-    <button class="select-on layui-btn layui-btn-sm" data-type="select"><i class="layui-icon"></i>
-    </button>
-    <button class="layui-btn layui-btn-sm icon-position-button" id="refresh" style="float: right;"
-            data-type="reload">
-      <i class="layui-icon">ဂ</i>
-    </button>
-  </div>
+<div class="koko-outer">
+  <form  class="layui-form">
+      <div class="layui-form-item">
+          <div class="layui-input-inline" style="width: 300px;">
+              <input type="text" name="key" autocomplete="off" class="layui-input">
+              <button class="layui-btn layui-btn-primary koko-btn koko-search-btn"><i class="layui-icon">&#xe741;</i></button>
+          </div>
 
-</div>
-<div class="layui-col-md12" style="height:40px;margin-top:3px;">
-  <div class="layui-btn-group">
-    <@shiro.hasPermission name="job:add">
-    <button class="layui-btn layui-btn-normal" data-type="add">
-      <i class="layui-icon">&#xe608;</i>新增
-    </button>
-    </@shiro.hasPermission>
-    <@shiro.hasPermission name="job:update">
-    <button class="layui-btn layui-btn-normal" data-type="update">
-      <i class="layui-icon">&#xe642;</i>编辑
-    </button>
-   </@shiro.hasPermission>
-    <@shiro.hasPermission name="job:select">
-    <button class="layui-btn layui-btn-normal" data-type="detail">
-      <i class="layui-icon">&#xe605;</i>查看
-    </button>
-    </@shiro.hasPermission>
+      </div>
+
+  </form>
+  <div class="koko-long-line"></div>
+
+  <div class="layui-tab">
+      <ul class="layui-tab-title">
+          <li class="layui-this">网站设置</li>
+          <li>用户管理</li>
+          <li>权限分配</li>
+          <li>商品管理</li>
+          <li>订单管理</li>
+          <li>+</li>
+      </ul>
+      <div class="layui-tab-content">
+          <div class="layui-tab-item">
+          <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item">
+                  <h2 class="layui-colla-title">layui 更适合哪些开发者？</h2>
+                  <div class="layui-colla-content layui-show">
+                      <p>在前端技术快速变革的今天，layui 仍然坚持语义化的组织模式，甚至于模块理念都是采用类AMD组织形式，并非是有意与时代背道而驰。layui 认为以jQuery为核心的开发方式还没有到完全消亡的时候，而早期市面上基于jQuery的UI都普通做得差强人意，所以需要有一个新的UI去重新为这一领域注入活力，并采用一些更科学的架构方式。
+                          <br>
+                          因此准确地说，layui 更多是面向那些追求开发简单的前端工程师们，以及所有层次的服务端程序员。</p>
+                  </div>
+              </div>
+              <div class="layui-colla-item">
+                  <h2 class="layui-colla-title">为什么JS社区大量采用未发布或者未广泛支持的语言特性？</h2>
+                  <div class="layui-colla-content">
+                      <p>有不少其他答案说是因为JS太差。我下面的答案已经说了，这不是根本性的原因。但除此之外，我还要纠正一些对JS具体问题的误解。JS当初是被作为脚本语言设计的，所以某些问题并不是JS设计得差或者是JS设计者的失误。比如var的作用域问题，并不是“错误”，而是当时绝大部分脚本语言都是这样的，如perl/php/sh等。模块的问题也是，脚本语言几乎都没有模块/命名空间功能。弱类型、for-in之类的问题也是，只不过现在用那些老的脚本语言的人比较少，所以很多人都误以为是JS才有的坑。另外有人说JS是半残语言，满足不了开发需求，1999年就该死。半残这个嘛，就夸张了。JS虽然有很多问题，但是设计总体还是优秀的。——来自知乎@贺师俊</p>
+                  </div>
+              </div>
+              <div class="layui-colla-item">
+                  <h2 class="layui-colla-title">为什么前端工程师多不愿意用 Bootstrap 框架？</h2>
+                  <div class="layui-colla-content">
+                      <p>因为不适合。如果希望开发长期的项目或者制作产品类网站，那么就需要实现特定的设计，为了在维护项目中可以方便地按设计师要求快速修改样式，肯定会逐步编写出各种业务组件、工具类，相当于为项目自行开发一套框架。——来自知乎@Kayo</p>
+                  </div>
+              </div>
+              <div class="layui-colla-item">
+                  <h2 class="layui-colla-title">贤心是男是女？</h2>
+                  <div class="layui-colla-content">
+                      <p>man！ 所以这个问题不要再出现了。。。</p>
+                  </div>
+              </div>
+          </div>
+          </div>
+          <div class="layui-tab-item">内容2</div>
+          <div class="layui-tab-item">内容3</div>
+          <div class="layui-tab-item">内容4</div>
+          <div class="layui-tab-item">内容5</div>
+      </div>
   </div>
 </div>
-<table id="jobList" class="layui-hide" lay-filter="job"></table>
-<script type="text/html" id="toolBar">
-  <@shiro.hasPermission name="job:add">
-  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
-  </@shiro.hasPermission>
-<@shiro.hasPermission name="job:update">
-  <a class="layui-btn layui-btn-xs  layui-btn-normal" lay-event="edit">编辑</a>
-</@shiro.hasPermission>
-  {{#  if(!d.status){ }}
-  <@shiro.hasPermission name="job:start">
-  <a class="layui-btn layui-btn-xs  layui-btn-normal" lay-event="start">启动</a>
-</@shiro.hasPermission>
-  {{#  } }}
-  {{# if(d.status){ }}
-  <@shiro.hasPermission name="job:end">
-  <a class="layui-btn layui-btn-xs  layui-btn-normal" lay-event="end">停止</a>
-</@shiro.hasPermission>
-  {{#  } }}
-<@shiro.hasPermission name="role:del">
-  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-</@shiro.hasPermission>
-</script>
 <script>
-  /**前端后期完美后 会进行封装 目前先不处理 精力在后端。。。*/
-  layui.laytpl.toDateString = function(d, format){
-    var date = new Date(d || new Date())
-        ,ymd = [
-      this.digit(date.getFullYear(), 4)
-      ,this.digit(date.getMonth() + 1)
-      ,this.digit(date.getDate())
-    ]
-        ,hms = [
-      this.digit(date.getHours())
-      ,this.digit(date.getMinutes())
-      ,this.digit(date.getSeconds())
-    ];
-
-    format = format || 'yyyy-MM-dd HH:mm:ss';
-
-    return format.replace(/yyyy/g, ymd[0])
-    .replace(/MM/g, ymd[1])
-    .replace(/dd/g, ymd[2])
-    .replace(/HH/g, hms[0])
-    .replace(/mm/g, hms[1])
-    .replace(/ss/g, hms[2]);
-  };
-
-  //数字前置补零
-  layui.laytpl.digit = function(num, length, end){
-    var str = '';
-    num = String(num);
-    length = length || 2;
-    for(var i = num.length; i < length; i++){
-      str += '0';
-    }
-    return num < Math.pow(10, length) ? str + (num|0) : num;
-  };
-
-  document.onkeydown = function (e) { // 回车提交表单
-    var theEvent = window.event || e;
-    var code = theEvent.keyCode || theEvent.which;
-    if (code == 13) {
-      $(".select .select-on").click();
-    }
-  }
-  layui.use('table', function () {
-    var table = layui.table;
-    //方法级渲染
-    table.render({
-      id: 'jobList',
-      elem: '#jobList'
-      , url: 'showJobList'
-      , cols: [[
-        {checkbox: true, fixed: true, width: '5%'}
-        , {field: 'jobName', title: '任务名称', width: '10%', sort: true}
-        , {field: 'cron', title: '表达式', width: '10%'}
-        , {field: 'clazzPath', title: '任务类', width: '20%', sort: true}
-        , {field: 'status', title: '状态', width: '10%', sort: true}
-        , {field: 'jobDesc', title: '任务描述', width: '10%'}
-        , {field: 'createDate', title: '创建时间', width: '10%',templet: '<div>{{ layui.laytpl.toDateString(d.createDate,"yyyy-MM-dd hh:mm:ss") }}</div>'}
-        , {field: 'remark', title: '操作', width: '20%', toolbar: "#toolBar"}
-      ]]
-      , page: true
-      ,  height: 'full-83'
+    layui.use(['element','form'], function() {
+        var element = layui.element,form=layui.form;
+        form.render();
     });
-
-    var $ = layui.$, active = {
-      select: function () {
-        var jobName = $('#jobName').val();
-        var remark = $('#remark').val();
-        table.reload('jobList', {
-          where: {
-              jobName: jobName,
-              jobDesc: remark
-          }
-        });
-      },
-      reload:function(){
-        $('#jobName').val('');
-       $('#remark').val('');
-        table.reload('jobList', {
-          where: {
-              jobName: null,
-              jobDesc: null
-          }
-        });
-      },
-      add: function () {
-        add('添加任务', 'showAddJob', 700, 450);
-      },
-      update: function () {
-        var checkStatus = table.checkStatus('jobList')
-            , data = checkStatus.data;
-        if (data.length != 1) {
-          layer.msg('请选择一行编辑', {icon: 5});
-          return false;
-        }
-        if(data[0].status){
-          layer.msg('已经启动任务无法更新,请停止后更新',{icon:5,offset: 'rb',area:['200px','100px'],anim:2});
-          return false;
-        }
-        update('编辑任务', 'updateJob?id=' + data[0].id, 700, 450);
-      },
-      detail: function () {
-        var checkStatus = table.checkStatus('jobList')
-            , data = checkStatus.data;
-        if (data.length != 1) {
-          layer.msg('请选择一行查看', {icon: 5});
-          return false;
-        }
-        detail('查看任务信息', 'updateJob?id=' + data[0].id, 700, 450);
-      }
-    };
-    //监听工具条
-    table.on('tool(job)', function (obj) {
-      var data = obj.data;
-      if (obj.event === 'detail') {
-        detail('编辑角色', 'updateJob?id=' + data.id, 700, 450);
-      } else if (obj.event === 'del') {
-        if(!data.status) {
-          layer.confirm('确定删除任务[<label style="color: #00AA91;">' + data.jobName + '</label>]?',
-              function () {
-                del(data.id);
-              });
-        }else{
-          layer.msg('已经启动任务无法更新,请停止后删除',{icon:5,offset: 'rb',area:['200px','100px'],anim:2});
-        }
-      } else if (obj.event === 'edit') {
-        if(!data.status){
-          update('编辑任务', 'updateJob?id=' + data.id, 700, 450);
-        }else{
-          layer.msg('已经启动任务无法更新,请停止后更新',{icon:5,offset: 'rb',area:['200px','100px'],anim:2});
-        }
-      } else if(obj.event === 'start'){
-        layer.confirm('确定开启任务[<label style="color: #00AA91;">' + data.jobName + '</label>]?', function(){
-          reqByAjax(data.id,'startJob','jobList');
-        });
-      } else if(obj.event === 'end'){
-        layer.confirm('确定停止任务[<label style="color: #00AA91;">' + data.jobName + '</label>]?', function(){
-          reqByAjax(data.id,'endJob','jobList');
-        });
-      }
-    });
-
-    $('.layui-col-md12 .layui-btn').on('click', function () {
-      var type = $(this).data('type');
-      active[type] ? active[type].call(this) : '';
-    });
-    $('.select .layui-btn').on('click', function () {
-      var type = $(this).data('type');
-      active[type] ? active[type].call(this) : '';
-    });
-
-  });
-    function reqByAjax(id,url,tableId){
-    $.ajax({
-      url: url,
-      type: "post",
-      data: {id: id},
-      success: function (d) {
-        if(d.flag){
-          layer.msg(d.msg,{icon:6,offset: 'rb',area:['120px','80px'],anim:2});
-          layui.table.reload(tableId);
-        }else{
-          layer.msg(d.msg,{icon:5,offset: 'rb',area:['120px','80px'],anim:2});
-        }
-      }
-    });
-  }
-
-  function del(id) {
-    $.ajax({
-      url: "del",
-      type: "post",
-      data: {id: id},
-      success: function (d) {
-        if(d.flag){
-          layer.msg(d.msg,{icon:6,offset: 'rb',area:['120px','80px'],anim:2});
-          layui.table.reload('jobList');
-        }else{
-          layer.msg(d.msg,{icon:5,offset: 'rb',area:['120px','80px'],anim:2});
-        }
-      }
-    });
-  }
-  function detail(title, url, w, h) {
-    if (title == null || title == '') {
-      title = false;
-    }
-    if (url == null || url == '') {
-      url = "error/404";
-    }
-    if (w == null || w == '') {
-      w = ($(window).width() * 0.9);
-    }
-    if (h == null || h == '') {
-      h = ($(window).height() - 50);
-    }
-    layer.open({
-      id: 'user-detail',
-      type: 2,
-      area: [w + 'px', h + 'px'],
-      fix: false,
-      maxmin: true,
-      shadeClose: true,
-      shade: 0.4,
-      title: title,
-      content: url + '&detail=true',
-      // btn:['关闭']
-    });
-  }
-  /**
-   * 更新用户
-   */
-  function update(title, url, w, h) {
-    if (title == null || title == '') {
-      title = false;
-    }
-    if (url == null || url == '') {
-      url = "error/404";
-    }
-    if (w == null || w == '') {
-      w = ($(window).width() * 0.9);
-    }
-    if (h == null || h == '') {
-      h = ($(window).height() - 50);
-    }
-    layer.open({
-      id: 'user-update',
-      type: 2,
-      area: [w + 'px', h + 'px'],
-      fix: false,
-      maxmin: true,
-      shadeClose: false,
-      shade: 0.4,
-      title: title,
-      content: url + '&detail=false'
-    });
-  }
-
-  /*弹出层*/
-  /*
-   参数解释：
-   title   标题
-   url     请求的url
-   id      需要操作的数据id
-   w       弹出层宽度（缺省调默认值）
-   h       弹出层高度（缺省调默认值）
-   */
-  function add(title, url, w, h) {
-    if (title == null || title == '') {
-      title = false;
-    }
-    if (url == null || url == '') {
-      url = "error/404";
-    }
-    if (w == null || w == '') {
-      w = ($(window).width() * 0.9);
-    }
-    if (h == null || h == '') {
-      h = ($(window).height() - 50);
-    }
-    layer.open({
-      id: 'job-add',
-      type: 2,
-      area: [w + 'px', h + 'px'],
-      fix: false,
-      maxmin: true,
-      shadeClose: false,
-      shade: 0.4,
-      title: title,
-      content: url
-    });
-  }
 </script>
 </body>
 

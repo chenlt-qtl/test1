@@ -36,6 +36,7 @@ public class FreeMarkerConfig{
     resolver.setOrder(0);
     Properties settings = new Properties();
     settings.put("imagePath",imagePath);
+    settings.put("timestamp",System.currentTimeMillis());
     resolver.setAttributes(settings);
     return resolver;
   }

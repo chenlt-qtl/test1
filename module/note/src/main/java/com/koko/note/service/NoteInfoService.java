@@ -6,5 +6,5 @@ import com.koko.note.entity.NoteInfo;
 
 public interface NoteInfoService extends BaseService<NoteInfo,String> {
 
-    public JSONArray getNoteInfoJsonList();
+    public JSONArray getNoteInfoJsonList(String userId,String pId);
 }

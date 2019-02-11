@@ -9,10 +9,18 @@
     <result column="pid" jdbcType="VARCHAR" property="pid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="tab" jdbcType="VARCHAR" property="tab" />
+    <result column="status" jdbcType="BIT" property="status" />
     <result column="create_by" jdbcType="VARCHAR" property="createBy" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
     <result column="content" jdbcType="LONGVARBINARY" property="content" />
   </resultMap>
+
+  <select id="getNoteInfo" resultMap="BaseResultMap">
+    select
+    *
+    from note_info where pid=#{pId,jdbcType=VARCHAR} and status=1 and create_by=#{userId,jdbcType=VARCHAR}
+  </select>
+
 </mapper>

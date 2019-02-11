@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'taobao';
+
+    src: url('./font_865712_zffzrc9vvyf/iconfont.eot');
+    src: url('./font_865712_zffzrc9vvyf/iconfont.eot?#iefix') format('embedded-opentype'), url('./font_865712_zffzrc9vvyf/iconfont.woff2') format('woff2'), url('./font_865712_zffzrc9vvyf/iconfont.woff') format('woff'), url('./font_865712_zffzrc9vvyf/iconfont.ttf') format('truetype'), url('./font_865712_zffzrc9vvyf/iconfont.svg#glyphicons_halflingsregular') format('svg');
+}
+.taobao-icon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'taobao';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

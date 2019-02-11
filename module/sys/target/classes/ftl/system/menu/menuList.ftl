@@ -92,7 +92,7 @@
     });
     var $ = layui.$, active = {
         add: function () {
-            add('添加菜单', 'showAddMenu', 700, 550);
+            open('add-menu','添加菜单','showAddMenu', 700, 550);
         }
     }
     $('.layui-btn-group .layui-btn').on('click', function () {
